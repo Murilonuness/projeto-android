@@ -13,22 +13,26 @@
     --cor1: #83e1ad;
     --cor2: #3ddc84;
     --cor3: #2fa866;
-    --cor4: #1a5c37; 
+    --cor4: #1a5c37;
     --cor5: #063d1e;
 
     --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
-    --fonte-destaque: 'Bebas Nue', cursive;
+    --fonte-destaque: 'Bebas Neue', cursive;
     --fonte-android: 'Android', cursive;
 }
 
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 
 body {
+    background-color: var(--cor1);
     font-family: var(--fonte-padrao);
-    background-color: #83e1ad;
+}
+
+a.external::after {
+    content: '\00A0\1F517';
 }
 
 header {
@@ -38,16 +42,17 @@ header {
     padding-top: 40px;
 }
 
-header h1 {
+
+header > h1 {
     color: white;
     font-family: var(--fonte-destaque);
     margin-bottom: 20px;
     font-weight: normal;
     font-size: 3em;
-    text-shadow: 2px 2px 0px rgb(0 0 0 / 36%);
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.356);
 }
 
-header p {
+header > p {
     color: white;
     font-family: var(--fonte-padrao);
     font-size: 1.2em;
@@ -55,7 +60,7 @@ header p {
     margin: auto;
     padding-right: 10px;
     padding-left: 10px;
-    text-shadow: 2px 2px 0px rgb(0 0 0 / 36%);
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.356);
 }
 
 nav {
@@ -65,18 +70,17 @@ nav {
 }
 
 nav > a {
-    text-decoration: none;
     color: white;
-    font-weight: bold;
+    text-decoration: none;
     padding: 10px;
+    font-weight: bold;
     border-radius: 5px;
-    transition-duration: 0.5s;
+    transition-duration: .5s;
 }
 
-nav a:hover {
-    text-decoration: underline;
-    background-color: var(--cor3);
-    color: var(--cor5);
+nav > a:hover {
+   color: var(--cor5);
+   background-color: var(--cor3);
 }
 
 main {
@@ -85,7 +89,7 @@ main {
     padding: 20px;
     min-width: 300px;
     max-width: 1000px;
-    box-shadow: 0px 0px 10px rgb(0 0 0 / 43%);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.432);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -110,7 +114,7 @@ main h2 {
 
 main p {
     margin: 15px 0px 15px 0px;
-    text-align: justify;
+    text-align: justify ;
     text-indent: 30px;
     line-height: 1em;
     font-size: 1em;
@@ -122,33 +126,8 @@ main img {
 
 main img.bugpequeno {
     display: block;
+    max-width: 350px;
     margin: auto;
-    width: 350px;
-}
-
-a {
-    color: var(--cor5);
-    text-decoration: none;
-    font-weight: bold;
-    padding: 2px 5px;
-}
-
-a:hover {
-    background-color: var(--cor1);
-    text-decoration: underline;
-}
-
-a:active {
-    background-color: rgba(2, 0, 129, 0.466);
-}
-
-a.external::after {
-    content: '\00A0\1F517';
-}
-
-strong {
-    color: var(--cor3);
-    font-weight: bold;
 }
 
 div.video {
@@ -167,20 +146,32 @@ div.video > iframe {
     height: 90%;
 }
 
+strong {
+    color: #2fa866;
+    font-weight: bold;
+}
+
+a {
+    color: var(--cor5);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 2px 5px;
+}
+
+a:hover {
+    text-decoration: underline;
+    background-color: var(--cor1);
+}
+
+a:active {
+    background-color: rgba(2, 0, 129, 0.466);
+}
+
 aside {
     background-color: #a0e5c0;
     padding: 10px;
     border-radius: 10px 10px;
-    box-shadow: 3px 3px 8px rgb(0 0 0 / 35%);
-}
-
-aside h3 {
-    background-color: var(--cor3);
-    color: white;
-    padding: 5px;
-    margin: -10px -10px 0px -10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.350);
 }
 
 aside > ul {
@@ -189,8 +180,21 @@ aside > ul {
     list-style-type: '\2714\00A0\00A0';
 }
 
-li {
-    display: list-item;
+aside > h3 {
+    background-color: var(--cor3);
+    color: white;
+    padding: 5px;
+    margin: -10px -10px 0px -10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+aside a:hover {
+    background-color: var(--cor2);
+}
+
+aside a:active {
+    background-color: rgba(2, 0, 129, 0.466);
 }
 
 footer {
@@ -198,6 +202,7 @@ footer {
     color: white;
     text-align: center;
     padding: 5px;
+    font-size: 0.8;
 }
 
 footer a {
